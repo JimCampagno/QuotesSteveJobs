@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A0p-ex-q8T">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <scenes>
+        <!--Steve Jobs Quotes-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GX8-On-D5b">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <subviews>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lts-Wq-sil">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Jp-QC-nEJ">
+                                                <rect key="frame" x="0.0" y="0.0" width="2250" height="603"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1F-rM-BsE" customClass="SteveJobsView">
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCi-Ar-a57" customClass="SteveJobsView">
+                                                        <rect key="frame" x="375" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-xn-XLX" customClass="SteveJobsView">
+                                                        <rect key="frame" x="750" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7F-hy-qUW" customClass="SteveJobsView">
+                                                        <rect key="frame" x="1125" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-e3-qJ9" customClass="SteveJobsView">
+                                                        <rect key="frame" x="1500" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGx-ZF-CkN" customClass="SteveJobsView">
+                                                        <rect key="frame" x="1875" y="0.0" width="375" height="603"/>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="8Jp-QC-nEJ" firstAttribute="leading" secondItem="lts-Wq-sil" secondAttribute="leading" id="54G-NB-jTJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="8Jp-QC-nEJ" secondAttribute="trailing" id="6fe-Vc-sBK"/>
+                                            <constraint firstItem="8Jp-QC-nEJ" firstAttribute="top" secondItem="lts-Wq-sil" secondAttribute="top" id="kC9-ic-Xjg"/>
+                                            <constraint firstAttribute="bottom" secondItem="8Jp-QC-nEJ" secondAttribute="bottom" id="nLx-cx-JaQ"/>
+                                        </constraints>
+                                    </scrollView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="8Jp-QC-nEJ" firstAttribute="width" secondItem="GX8-On-D5b" secondAttribute="width" multiplier="6" id="GjO-DV-Vzh"/>
+                                    <constraint firstAttribute="trailing" secondItem="lts-Wq-sil" secondAttribute="trailing" id="MhS-hz-OEP"/>
+                                    <constraint firstItem="lts-Wq-sil" firstAttribute="leading" secondItem="GX8-On-D5b" secondAttribute="leading" id="Ogm-GY-pKC"/>
+                                    <constraint firstAttribute="bottom" secondItem="lts-Wq-sil" secondAttribute="bottom" id="cUn-D0-j1c"/>
+                                    <constraint firstItem="lts-Wq-sil" firstAttribute="top" secondItem="GX8-On-D5b" secondAttribute="top" id="mcR-v2-OxJ"/>
+                                    <constraint firstItem="8Jp-QC-nEJ" firstAttribute="height" secondItem="GX8-On-D5b" secondAttribute="height" id="nlu-kJ-bkv"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="GX8-On-D5b" secondAttribute="trailing" id="A5J-P0-jKW"/>
+                            <constraint firstItem="GX8-On-D5b" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="RDX-Zj-3Hi"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GX8-On-D5b" secondAttribute="bottom" id="eP3-AH-oQH"/>
+                            <constraint firstItem="GX8-On-D5b" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rDl-4H-yrA"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Steve Jobs Quotes" id="srm-NT-cVH"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="steveView1" destination="A1F-rM-BsE" id="e9g-rF-yAZ"/>
+                        <outlet property="steveView2" destination="qCi-Ar-a57" id="nOP-sb-9pF"/>
+                        <outlet property="steveView3" destination="S8s-xn-XLX" id="jln-jC-BYD"/>
+                        <outlet property="steveView4" destination="h7F-hy-qUW" id="tnA-UY-SSL"/>
+                        <outlet property="steveView5" destination="BSV-e3-qJ9" id="Lyy-kw-cyL"/>
+                        <outlet property="steveView6" destination="qGx-ZF-CkN" id="hlP-kd-AD8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2027.5" y="322.5"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="Qq2-vQ-zDP">
+            <objects>
+                <splitViewController id="A0p-ex-q8T" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="s0S-xS-V7U" kind="relationship" relationship="detailViewController" id="Urx-cH-O6G"/>
+                        <segue destination="3V6-Tp-aV0" kind="relationship" relationship="masterViewController" id="WQA-xp-1Cf"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jnN-wT-GqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="710" y="-64"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fCH-YS-w70">
+            <objects>
+                <viewController id="Wxw-yo-akP" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Fwx-dx-4nE"/>
+                        <viewControllerLayoutGuide type="bottom" id="msA-D9-FCX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Kxf-fA-Oqc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="gKa-pH-MDH"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o3b-Jj-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2027.5" y="-438.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="P7a-kD-Jdt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s0S-xS-V7U" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j6u-9n-Snd">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.43218309352142631" green="0.61940984496968465" blue="0.81491315364837646" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Umh-lA-8sA"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaL-Sy-MgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473.5" y="322.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="B6g-Se-TzM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3V6-Tp-aV0" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGs-XZ-tj1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Wxw-yo-akP" kind="relationship" relationship="rootViewController" id="bgh-Nz-oyH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vT0-ZB-kkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1473.5" y="-438.5"/>
+        </scene>
+    </scenes>
+</document>
