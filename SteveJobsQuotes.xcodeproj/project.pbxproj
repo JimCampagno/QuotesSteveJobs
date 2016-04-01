@@ -19,6 +19,10 @@
 		5BA8AA231CADB29600D89604 /* SteveJobsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5BA8AA221CADB29600D89604 /* SteveJobsView.xib */; };
 		5BA8AA261CADB47300D89604 /* SteveJobsView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8AA251CADB47300D89604 /* SteveJobsView.m */; };
 		5BA8AA291CADB61B00D89604 /* SJQQuote.m in Sources */ = {isa = PBXBuildFile; fileRef = 5BA8AA281CADB61B00D89604 /* SJQQuote.m */; };
+		7DFB23751CADFEFF00F7BD2C /* QuoteTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB23741CADFEFF00F7BD2C /* QuoteTableViewController.m */; };
+		7DFB237A1CADFFDB00F7BD2C /* QuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB23791CADFFDB00F7BD2C /* QuoteView.m */; };
+		7DFB237C1CAE001300F7BD2C /* QuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DFB237B1CAE001300F7BD2C /* QuoteView.xib */; };
+		7DFB237F1CAE0ACD00F7BD2C /* SJQPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +47,13 @@
 		5BA8AA271CADB61B00D89604 /* SJQQuote.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJQQuote.h; sourceTree = "<group>"; };
 		5BA8AA281CADB61B00D89604 /* SJQQuote.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJQQuote.m; sourceTree = "<group>"; };
 		7CF4CE47067485EF644810A9 /* Pods-SteveJobsQuotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteveJobsQuotes.release.xcconfig"; path = "Pods/Target Support Files/Pods-SteveJobsQuotes/Pods-SteveJobsQuotes.release.xcconfig"; sourceTree = "<group>"; };
+		7DFB23731CADFEFF00F7BD2C /* QuoteTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteTableViewController.h; sourceTree = "<group>"; };
+		7DFB23741CADFEFF00F7BD2C /* QuoteTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteTableViewController.m; sourceTree = "<group>"; };
+		7DFB23781CADFFDB00F7BD2C /* QuoteView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteView.h; sourceTree = "<group>"; };
+		7DFB23791CADFFDB00F7BD2C /* QuoteView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteView.m; sourceTree = "<group>"; };
+		7DFB237B1CAE001300F7BD2C /* QuoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteView.xib; sourceTree = "<group>"; };
+		7DFB237D1CAE0ACD00F7BD2C /* SJQPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJQPerson.h; sourceTree = "<group>"; };
+		7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJQPerson.m; sourceTree = "<group>"; };
 		DDEEEC5FE102F65C0D2E02CA /* Pods-SteveJobsQuotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteveJobsQuotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SteveJobsQuotes/Pods-SteveJobsQuotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,12 +110,19 @@
 				5B14266C1CADA1780082CC22 /* Assets.xcassets */,
 				5B14266E1CADA1780082CC22 /* LaunchScreen.storyboard */,
 				5B1426711CADA1780082CC22 /* Info.plist */,
-				5B1426601CADA1780082CC22 /* Supporting Files */,
+				7DFB237B1CAE001300F7BD2C /* QuoteView.xib */,
+				7DFB23781CADFFDB00F7BD2C /* QuoteView.h */,
+				7DFB23791CADFFDB00F7BD2C /* QuoteView.m */,
 				5BA8AA221CADB29600D89604 /* SteveJobsView.xib */,
 				5BA8AA241CADB47300D89604 /* SteveJobsView.h */,
 				5BA8AA251CADB47300D89604 /* SteveJobsView.m */,
 				5BA8AA271CADB61B00D89604 /* SJQQuote.h */,
 				5BA8AA281CADB61B00D89604 /* SJQQuote.m */,
+				7DFB23731CADFEFF00F7BD2C /* QuoteTableViewController.h */,
+				7DFB23741CADFEFF00F7BD2C /* QuoteTableViewController.m */,
+				7DFB237D1CAE0ACD00F7BD2C /* SJQPerson.h */,
+				7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */,
+				5B1426601CADA1780082CC22 /* Supporting Files */,
 			);
 			path = SteveJobsQuotes;
 			sourceTree = "<group>";
@@ -186,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7DFB237C1CAE001300F7BD2C /* QuoteView.xib in Resources */,
 				5B1426701CADA1780082CC22 /* LaunchScreen.storyboard in Resources */,
 				5B14266D1CADA1780082CC22 /* Assets.xcassets in Resources */,
 				5BA8AA231CADB29600D89604 /* SteveJobsView.xib in Resources */,
@@ -249,7 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BA8AA211CADA35100D89604 /* SJQConstants.m in Sources */,
+				7DFB237A1CADFFDB00F7BD2C /* QuoteView.m in Sources */,
 				5BA8AA1E1CADA34200D89604 /* SJQAPIClient.m in Sources */,
+				7DFB237F1CAE0ACD00F7BD2C /* SJQPerson.m in Sources */,
+				7DFB23751CADFEFF00F7BD2C /* QuoteTableViewController.m in Sources */,
 				5B1426681CADA1780082CC22 /* ViewController.m in Sources */,
 				5B1426651CADA1780082CC22 /* AppDelegate.m in Sources */,
 				5BA8AA261CADB47300D89604 /* SteveJobsView.m in Sources */,
@@ -371,6 +393,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatironSchool.SteveJobsQuotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -383,6 +406,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.flatironSchool.SteveJobsQuotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

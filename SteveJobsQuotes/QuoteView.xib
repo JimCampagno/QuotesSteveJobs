@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="QuoteView">
+            <connections>
+                <outlet property="contentView" destination="iN0-l3-epB" id="1Yq-v3-uUg"/>
+                <outlet property="imageView" destination="rEQ-1x-eCu" id="HmZ-Xp-a7X"/>
+                <outlet property="knownForLabel" destination="sRM-yA-CCX" id="scl-0O-da0"/>
+                <outlet property="nameLabel" destination="ppO-R2-tHe" id="ARU-2Y-prr"/>
+                <outlet property="quoteLabel" destination="DSW-Rm-Eak" id="Roc-8K-wHQ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="619" height="265"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="o60-PT-jPa">
+                    <rect key="frame" x="0.0" y="0.0" width="619" height="265"/>
+                    <subviews>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="248" verticalHuggingPriority="248" translatesAutoresizingMaskIntoConstraints="NO" id="rEQ-1x-eCu">
+                            <rect key="frame" x="0.0" y="0.0" width="200" height="265"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="200" id="SmP-HE-J4b"/>
+                            </constraints>
+                        </imageView>
+                        <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="240" verticalHuggingPriority="240" horizontalCompressionResistancePriority="754" verticalCompressionResistancePriority="755" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Mpd-Pd-5Ec">
+                            <rect key="frame" x="208" y="0.0" width="363" height="265"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ppO-R2-tHe">
+                                    <rect key="frame" x="0.0" y="0.0" width="363" height="88.5"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Steve Jobs">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="AvenirNext-Bold"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSW-Rm-Eak">
+                                    <rect key="frame" x="0.0" y="88.5" width="363" height="88"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="8 Quotes">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="AvenirNext-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sRM-yA-CCX">
+                                    <rect key="frame" x="0.0" y="176.5" width="363" height="88.5"/>
+                                    <attributedString key="attributedText">
+                                        <fragment content="Apple">
+                                            <attributes>
+                                                <color key="NSColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <font key="NSFont" size="24" name="AvenirNext-Regular"/>
+                                                <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                            </attributes>
+                                        </fragment>
+                                    </attributedString>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zJ-tJ-Wtg">
+                            <rect key="frame" x="579" y="0.0" width="40" height="265"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="40" id="nJo-Ic-YjU"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                            <state key="normal" title="📝"/>
+                            <connections>
+                                <action selector="quoteButtonTapped:" destination="-1" eventType="touchUpInside" id="fQf-u9-UW1"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="o60-PT-jPa" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="9yB-RJ-iy7"/>
+                <constraint firstAttribute="bottom" secondItem="o60-PT-jPa" secondAttribute="bottom" id="I5n-m2-9vp"/>
+                <constraint firstAttribute="trailing" secondItem="o60-PT-jPa" secondAttribute="trailing" id="P6x-SV-eA6"/>
+                <constraint firstItem="o60-PT-jPa" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="hBV-wD-lBW"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="463.5" y="287.5"/>
+        </view>
+    </objects>
+</document>

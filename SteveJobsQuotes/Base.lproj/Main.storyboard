@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A0p-ex-q8T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A0p-ex-q8T">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -93,7 +93,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027.5" y="322.5"/>
+            <point key="canvasLocation" x="2027.5" y="404.5"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="Qq2-vQ-zDP">
@@ -123,6 +123,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="gKa-pH-MDH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <segue destination="s0S-xS-V7U" kind="show" identifier="quoteDetailSegue" id="vdi-eU-txh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3b-Jj-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -137,7 +140,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="j6u-9n-Snd">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.43218309352142631" green="0.61940984496968465" blue="0.81491315364837646" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="barTintColor" red="0.43137254901960786" green="0.61568627450980395" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -146,7 +149,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GaL-Sy-MgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1473.5" y="322.5"/>
+            <point key="canvasLocation" x="1473.5" y="404.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="B6g-Se-TzM">
@@ -157,6 +160,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="gGs-XZ-tj1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.43137254899999999" green="0.61568627450000002" blue="0.81568627449999997" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -168,4 +172,7 @@
             <point key="canvasLocation" x="1473.5" y="-438.5"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="vdi-eU-txh"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -8,6 +8,8 @@
 
 #import "SJQAPIClient.h"
 #import "SJQConstants.h"
+#import <Firebase.h>
+
 
 @interface SJQAPIClient ()
 
@@ -35,19 +37,5 @@
     [downloadPhotoTask resume];
 }
 
-////1
-//NSURL *url = [NSURL URLWithString:
-//              @"http://upload.wikimedia.org/wikipedia/commons/7/7f/Williams_River-27527.jpg"];
-//
-//// 2
-//NSURLSessionDownloadTask *downloadPhotoTask = [[NSURLSession sharedSession]
-//                                               downloadTaskWithURL:url completionHandler:^(NSURL *location, NSURLResponse *response, NSError *error) {
-//                                                   // 3
-//                                                   UIImage *downloadedImage = [UIImage imageWithData:
-//                                                                               [NSData dataWithContentsOfURL:location]];
-//                                               }];
-//
-//// 4
-//[downloadPhotoTask resume];
 
 @end

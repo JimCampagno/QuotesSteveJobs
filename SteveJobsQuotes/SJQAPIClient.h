@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Firebase.h>
 #import <UIKit/UIKit.h>
 
 @interface SJQAPIClient : NSObject
