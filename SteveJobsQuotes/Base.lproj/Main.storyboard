@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="A0p-ex-q8T">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hKV-Cd-K3w">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -93,22 +93,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2027.5" y="404.5"/>
+            <point key="canvasLocation" x="2839.5" y="385.5"/>
         </scene>
-        <!--Split View Controller-->
-        <scene sceneID="Qq2-vQ-zDP">
-            <objects>
-                <splitViewController id="A0p-ex-q8T" sceneMemberID="viewController">
-                    <connections>
-                        <segue destination="s0S-xS-V7U" kind="relationship" relationship="detailViewController" id="Urx-cH-O6G"/>
-                        <segue destination="3V6-Tp-aV0" kind="relationship" relationship="masterViewController" id="WQA-xp-1Cf"/>
-                    </connections>
-                </splitViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jnN-wT-GqF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="710" y="-64"/>
-        </scene>
-        <!--View Controller-->
+        <!--Steve Jobs Quotes-->
         <scene sceneID="fCH-YS-w70">
             <objects>
                 <viewController id="Wxw-yo-akP" sceneMemberID="viewController">
@@ -135,11 +122,8 @@
                             <constraint firstItem="msA-D9-FCX" firstAttribute="top" secondItem="4xV-yA-h4i" secondAttribute="bottom" id="rDr-TO-jlb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="gKa-pH-MDH"/>
+                    <navigationItem key="navigationItem" title="Steve Jobs Quotes" id="gKa-pH-MDH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <segue destination="s0S-xS-V7U" kind="show" identifier="quoteDetailSegue" id="vdi-eU-txh"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3b-Jj-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -158,11 +142,11 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D1L-vg-59Z" id="Qd4-LX-upn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCT-p1-g1f" customClass="QuoteView">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                     </subviews>
@@ -189,26 +173,6 @@
             <point key="canvasLocation" x="2540.5" y="-438.5"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="P7a-kD-Jdt">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="s0S-xS-V7U" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="j6u-9n-Snd">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.43137254901960786" green="0.61568627450980395" blue="0.81568627450980391" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Umh-lA-8sA"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GaL-Sy-MgE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1473.5" y="404.5"/>
-        </scene>
-        <!--Navigation Controller-->
         <scene sceneID="B6g-Se-TzM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3V6-Tp-aV0" sceneMemberID="viewController">
@@ -228,8 +192,24 @@
             </objects>
             <point key="canvasLocation" x="1473.5" y="-438.5"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="rvD-rA-6Pu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hKV-Cd-K3w" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0hw-c4-45a">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.4321830935" green="0.61940984499999996" blue="0.81491315360000005" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qV5-fK-K4k"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UyU-oq-ae5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2027" y="385"/>
+        </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="vdi-eU-txh"/>
-    </inferredMetricsTieBreakers>
 </document>

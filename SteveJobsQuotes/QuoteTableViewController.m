@@ -10,6 +10,7 @@
 #import "QuoteTableViewCell.h"
 #import "SJQPerson.h"
 #import "QuoteView.h"
+#import <Firebase.h>
 
 @interface QuoteTableViewController () <QuoteViewDelegate>
 
@@ -28,6 +29,22 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+}
+
+
+- (void)setupFirebaseReference {
+    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://stevejobsquotes.firebaseio.com"];
+    
+    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        // value is a property of type id on the FDataSnapshot object. (it can only be one of these)
+        // Data types that value can be are:
+        // * NSDictionay -- NSDictionary *data = snapshot.value;
+        // * NSArray -- NSArrray *data = snapshot.value;
+        // * NSNumber (also includes booleans) -- NSNumber *data = snapshot.value;
+        // * NSString -- NSString *data = snapshot.value;
+        
+    }];
 }
 
 

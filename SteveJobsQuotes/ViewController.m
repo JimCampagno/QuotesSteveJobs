@@ -38,18 +38,17 @@
 }
 
 - (void)setupFirebaseReference {
-    
     Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://stevejobsquotes.firebaseio.com"];
-    
     [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        
+        // At this particular reference (URL above), the value property is of type NSDictionary.
+        // We are accessing the value for key "quotes" below, storing that returned value in an NSArray variable named quotes.
         NSArray *quotes = snapshot.value[@"quotes"];
         
         for (NSString *string in quotes) {
             SJQQuote *newQuote = [SJQQuote quoteFromString:string];
             [self.quotes addObject:newQuote];
         }
-        
+
         [self setupQuoteViews];
     }];
 }
