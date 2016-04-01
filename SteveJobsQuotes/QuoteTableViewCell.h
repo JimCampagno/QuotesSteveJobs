@@ -1,5 +1,5 @@
 //
-//  QuoteTableViewController.h
+//  QuoteTableViewCell.h
 //  SteveJobsQuotes
 //
 //  Created by Jim Campagno on 3/31/16.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuoteView.h"
 
-@interface QuoteTableViewController : UITableViewController
+@interface QuoteTableViewCell : UITableViewCell
 
-@property (nonatomic, strong) NSArray *people; // of SJQPersons
+@property (weak, nonatomic) IBOutlet QuoteView *quoteView;
 
 @end

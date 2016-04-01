@@ -23,6 +23,7 @@
 		7DFB237A1CADFFDB00F7BD2C /* QuoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB23791CADFFDB00F7BD2C /* QuoteView.m */; };
 		7DFB237C1CAE001300F7BD2C /* QuoteView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DFB237B1CAE001300F7BD2C /* QuoteView.xib */; };
 		7DFB237F1CAE0ACD00F7BD2C /* SJQPerson.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */; };
+		7DFB23871CAE1A0300F7BD2C /* QuoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DFB23861CAE1A0300F7BD2C /* QuoteTableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,8 @@
 		7DFB237B1CAE001300F7BD2C /* QuoteView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = QuoteView.xib; sourceTree = "<group>"; };
 		7DFB237D1CAE0ACD00F7BD2C /* SJQPerson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SJQPerson.h; sourceTree = "<group>"; };
 		7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SJQPerson.m; sourceTree = "<group>"; };
+		7DFB23851CAE1A0300F7BD2C /* QuoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuoteTableViewCell.h; sourceTree = "<group>"; };
+		7DFB23861CAE1A0300F7BD2C /* QuoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuoteTableViewCell.m; sourceTree = "<group>"; };
 		DDEEEC5FE102F65C0D2E02CA /* Pods-SteveJobsQuotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SteveJobsQuotes.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SteveJobsQuotes/Pods-SteveJobsQuotes.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -98,30 +101,11 @@
 		5B14265F1CADA1780082CC22 /* SteveJobsQuotes */ = {
 			isa = PBXGroup;
 			children = (
-				5B1426631CADA1780082CC22 /* AppDelegate.h */,
-				5B1426641CADA1780082CC22 /* AppDelegate.m */,
-				5BA8AA1F1CADA35100D89604 /* SJQConstants.h */,
-				5BA8AA201CADA35100D89604 /* SJQConstants.m */,
-				5BA8AA1C1CADA34200D89604 /* SJQAPIClient.h */,
-				5BA8AA1D1CADA34200D89604 /* SJQAPIClient.m */,
-				5B1426661CADA1780082CC22 /* ViewController.h */,
-				5B1426671CADA1780082CC22 /* ViewController.m */,
-				5B1426691CADA1780082CC22 /* Main.storyboard */,
-				5B14266C1CADA1780082CC22 /* Assets.xcassets */,
-				5B14266E1CADA1780082CC22 /* LaunchScreen.storyboard */,
-				5B1426711CADA1780082CC22 /* Info.plist */,
-				7DFB237B1CAE001300F7BD2C /* QuoteView.xib */,
-				7DFB23781CADFFDB00F7BD2C /* QuoteView.h */,
-				7DFB23791CADFFDB00F7BD2C /* QuoteView.m */,
-				5BA8AA221CADB29600D89604 /* SteveJobsView.xib */,
-				5BA8AA241CADB47300D89604 /* SteveJobsView.h */,
-				5BA8AA251CADB47300D89604 /* SteveJobsView.m */,
-				5BA8AA271CADB61B00D89604 /* SJQQuote.h */,
-				5BA8AA281CADB61B00D89604 /* SJQQuote.m */,
-				7DFB23731CADFEFF00F7BD2C /* QuoteTableViewController.h */,
-				7DFB23741CADFEFF00F7BD2C /* QuoteTableViewController.m */,
-				7DFB237D1CAE0ACD00F7BD2C /* SJQPerson.h */,
-				7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */,
+				7DFB23841CAE19C000F7BD2C /* Storyboards */,
+				7DFB23801CAE195900F7BD2C /* ViewControllers */,
+				7DFB23831CAE19A200F7BD2C /* Models */,
+				7DFB23821CAE198900F7BD2C /* Views */,
+				7DFB23811CAE196600F7BD2C /* xibs */,
 				5B1426601CADA1780082CC22 /* Supporting Files */,
 			);
 			path = SteveJobsQuotes;
@@ -130,6 +114,8 @@
 		5B1426601CADA1780082CC22 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				5B14266C1CADA1780082CC22 /* Assets.xcassets */,
+				5B1426711CADA1780082CC22 /* Info.plist */,
 				5B1426611CADA1780082CC22 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -142,6 +128,65 @@
 				7CF4CE47067485EF644810A9 /* Pods-SteveJobsQuotes.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		7DFB23801CAE195900F7BD2C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5B1426661CADA1780082CC22 /* ViewController.h */,
+				5B1426671CADA1780082CC22 /* ViewController.m */,
+				7DFB23731CADFEFF00F7BD2C /* QuoteTableViewController.h */,
+				7DFB23741CADFEFF00F7BD2C /* QuoteTableViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		7DFB23811CAE196600F7BD2C /* xibs */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8AA221CADB29600D89604 /* SteveJobsView.xib */,
+				7DFB237B1CAE001300F7BD2C /* QuoteView.xib */,
+			);
+			name = xibs;
+			sourceTree = "<group>";
+		};
+		7DFB23821CAE198900F7BD2C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5BA8AA241CADB47300D89604 /* SteveJobsView.h */,
+				5BA8AA251CADB47300D89604 /* SteveJobsView.m */,
+				7DFB23781CADFFDB00F7BD2C /* QuoteView.h */,
+				7DFB23791CADFFDB00F7BD2C /* QuoteView.m */,
+				7DFB23851CAE1A0300F7BD2C /* QuoteTableViewCell.h */,
+				7DFB23861CAE1A0300F7BD2C /* QuoteTableViewCell.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		7DFB23831CAE19A200F7BD2C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				5B1426631CADA1780082CC22 /* AppDelegate.h */,
+				5B1426641CADA1780082CC22 /* AppDelegate.m */,
+				5BA8AA1F1CADA35100D89604 /* SJQConstants.h */,
+				5BA8AA201CADA35100D89604 /* SJQConstants.m */,
+				5BA8AA1C1CADA34200D89604 /* SJQAPIClient.h */,
+				5BA8AA1D1CADA34200D89604 /* SJQAPIClient.m */,
+				5BA8AA271CADB61B00D89604 /* SJQQuote.h */,
+				5BA8AA281CADB61B00D89604 /* SJQQuote.m */,
+				7DFB237D1CAE0ACD00F7BD2C /* SJQPerson.h */,
+				7DFB237E1CAE0ACD00F7BD2C /* SJQPerson.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		7DFB23841CAE19C000F7BD2C /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				5B14266E1CADA1780082CC22 /* LaunchScreen.storyboard */,
+				5B1426691CADA1780082CC22 /* Main.storyboard */,
+			);
+			name = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +321,7 @@
 				5B1426651CADA1780082CC22 /* AppDelegate.m in Sources */,
 				5BA8AA261CADB47300D89604 /* SteveJobsView.m in Sources */,
 				5BA8AA291CADB61B00D89604 /* SJQQuote.m in Sources */,
+				7DFB23871CAE1A0300F7BD2C /* QuoteTableViewCell.m in Sources */,
 				5B1426621CADA1780082CC22 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

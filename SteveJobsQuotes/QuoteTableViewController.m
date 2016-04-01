@@ -7,8 +7,13 @@
 //
 
 #import "QuoteTableViewController.h"
+#import "QuoteTableViewCell.h"
+#import "SJQPerson.h"
+#import "QuoteView.h"
 
-@interface QuoteTableViewController ()
+@interface QuoteTableViewController () <QuoteViewDelegate>
+
+@property (nonatomic, strong) NSMutableDictionary *data; // Key: NSIndexPath, Value: SJQPerson
 
 @end
 
@@ -16,6 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    _data = [NSMutableDictionary new];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -28,54 +34,76 @@
 
 #pragma mark - Table view data source
 
-
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 0;
+    return self.people.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
-    
-    
+    QuoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quoteCell"
+                                                               forIndexPath:indexPath];
     return cell;
 }
 
+-(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    QuoteTableViewCell *quoteCell = (QuoteTableViewCell *)cell;
+    if (!quoteCell.quoteView.delegate) {
+        quoteCell.quoteView.delegate = self;
+    }
+    
+    SJQPerson *person = self.people[indexPath.row];
+    
+    if (!self.data[person.uniqueID]) {
+        self.data[person.uniqueID] = indexPath;
+    }
+
+    quoteCell.quoteView.person = person;
+}
+
+- (void)quoteButtonTappedForPerson:(SJQPerson *)person
+                            sender:(id)sender {
+    
+    
+}
+- (BOOL)canUpdateImageViewWithQuoteView:(QuoteView *)sender {
+    SJQPerson *person = sender.person;
+    NSIndexPath *indexPath = self.data[person.uniqueID];
+    return [self.tableView.indexPathsForVisibleRows containsObject:indexPath];
+}
 
 /*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
+ // Override to support conditional editing of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the specified item to be editable.
+ return YES;
+ }
+ */
 
 /*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
+ // Override to support editing the table view.
+ - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+ if (editingStyle == UITableViewCellEditingStyleDelete) {
+ // Delete the row from the data source
+ [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+ } else if (editingStyle == UITableViewCellEditingStyleInsert) {
+ // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+ }
+ }
+ */
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 
 #pragma mark - Navigation

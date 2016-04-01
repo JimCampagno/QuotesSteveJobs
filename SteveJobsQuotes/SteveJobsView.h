@@ -7,9 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@class SJQQuote;
-
+#import "SJQQuote.h"
 @interface SteveJobsView : UIView
 
 @property (strong, nonatomic) SJQQuote *quote;

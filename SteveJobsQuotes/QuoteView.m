@@ -37,6 +37,8 @@
     [self.contentView.bottomAnchor constraintEqualToAnchor:self.bottomAnchor].active = YES;
     [self.contentView.leftAnchor constraintEqualToAnchor:self.leftAnchor].active = YES;
     [self.contentView.rightAnchor constraintEqualToAnchor:self.rightAnchor].active = YES;
+    
+    self.imageView.alpha = 0.0;
 }
 
 - (void)setPerson:(SJQPerson *)person {

@@ -7,7 +7,6 @@
 //
 
 #import "SteveJobsView.h"
-#import "SJQQuote.h"
 
 @implementation SteveJobsView
 

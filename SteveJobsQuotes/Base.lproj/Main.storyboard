@@ -119,7 +119,21 @@
                     <view key="view" contentMode="scaleToFill" id="Kxf-fA-Oqc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4xV-yA-h4i">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <connections>
+                                    <segue destination="z1j-j1-DfY" kind="embed" identifier="tableViewSegue" id="lnX-Rp-rLr"/>
+                                </connections>
+                            </containerView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="4xV-yA-h4i" firstAttribute="leading" secondItem="Kxf-fA-Oqc" secondAttribute="leading" id="Oby-6O-QLn"/>
+                            <constraint firstItem="4xV-yA-h4i" firstAttribute="top" secondItem="Fwx-dx-4nE" secondAttribute="bottom" id="VKW-aB-RZ8"/>
+                            <constraint firstAttribute="trailing" secondItem="4xV-yA-h4i" secondAttribute="trailing" id="fr4-AL-ah0"/>
+                            <constraint firstItem="msA-D9-FCX" firstAttribute="top" secondItem="4xV-yA-h4i" secondAttribute="bottom" id="rDr-TO-jlb"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gKa-pH-MDH"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -130,6 +144,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o3b-Jj-gsS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2027.5" y="-438.5"/>
+        </scene>
+        <!--Quote Table View Controller-->
+        <scene sceneID="eNi-Ws-JDj">
+            <objects>
+                <tableViewController id="z1j-j1-DfY" customClass="QuoteTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="azp-dw-CSc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="quoteCell" rowHeight="118" id="D1L-vg-59Z" customClass="QuoteTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="118"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D1L-vg-59Z" id="Qd4-LX-upn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCT-p1-g1f" customClass="QuoteView">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="117.5"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rCT-p1-g1f" firstAttribute="top" secondItem="Qd4-LX-upn" secondAttribute="top" id="19w-cM-M3l"/>
+                                        <constraint firstAttribute="trailing" secondItem="rCT-p1-g1f" secondAttribute="trailing" id="4w9-bD-Nqm"/>
+                                        <constraint firstAttribute="bottom" secondItem="rCT-p1-g1f" secondAttribute="bottom" id="U85-zD-yFm"/>
+                                        <constraint firstItem="rCT-p1-g1f" firstAttribute="leading" secondItem="Qd4-LX-upn" secondAttribute="leading" id="k4M-uh-BWz"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="quoteView" destination="rCT-p1-g1f" id="fBj-2B-7nA"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="z1j-j1-DfY" id="IvL-WE-Luo"/>
+                            <outlet property="delegate" destination="z1j-j1-DfY" id="Cpg-v7-BN4"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="edR-SW-JKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2540.5" y="-438.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="P7a-kD-Jdt">

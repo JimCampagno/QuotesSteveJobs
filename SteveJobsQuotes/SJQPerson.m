@@ -43,6 +43,13 @@
                       }];
 }
 
+- (NSString *)uniqueID {
+    if (!_uniqueID) {
+        _uniqueID = [NSString stringWithFormat:@"%@%@", _name, [_imageURL absoluteString]];
+    }
+    return _uniqueID;
+}
+
 
 
 @end

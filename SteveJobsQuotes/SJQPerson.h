@@ -16,6 +16,7 @@
 @property (nonatomic, strong) NSString *knownFor;
 @property (nonatomic, strong) NSURL *imageURL;
 @property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSString *uniqueID;
 
 + (instancetype)personFromDictionary:(NSDictionary *)dict;
 - (void)getImageFromURLwithCompletion:(void (^)(BOOL success))block;

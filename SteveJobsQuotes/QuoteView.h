@@ -9,13 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "SJQPerson.h"
 
-@class QuoteView;
-
 @protocol QuoteViewDelegate <NSObject>
 
 - (void)quoteButtonTappedForPerson:(SJQPerson *)person
-                            sender:(QuoteView *)sender;
-- (BOOL)canUpdateImageViewWithQuoteView:(QuoteView *)sender;
+                            sender:(id)sender;
+- (BOOL)canUpdateImageViewWithQuoteView:(id)sender;
 
 @end
 
@@ -30,3 +28,5 @@
 @property (weak, nonatomic) id <QuoteViewDelegate> delegate;
 
 @end
+
+
