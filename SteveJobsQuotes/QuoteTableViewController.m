@@ -31,34 +31,44 @@
     _wikiQuoteData = [NSMutableArray new];
     [self setupFirebaseReference];
     
-    NSString *urlString = @"https://en.wikiquote.org/wiki/Rocky_(film)";
-    
-    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
-    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
-    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseDocument) {
-        
-        for (ONOXMLElement *element in [responseDocument CSS:@"li"]) {
-            BOOL hasStringValue = element.stringValue != nil;
-            BOOL isValidLine = [element.description containsString:@"<li>"];
-            BOOL isCastListing = [element.description containsString:@"<li><a href="];
-            
-            if (hasStringValue & isValidLine) {
-                // The cast listing begins at the end of the page. I'm using break and not continue because when the cast listing begins, there are no more quotes to supply. What distinguishes the cast listing from the beginning of the link to the end is the href (which is why I'm locating it within the string)
-                if (isCastListing) {
-                    break;
-                }
-                
-                [self.wikiQuoteData addObject:element.stringValue];
-            }
-        }
-        
-        for (NSString *quote in self.wikiQuoteData) {
-            NSLog(@"%@\n\n\n\n\n", quote);
-        }
-        
-    } failure:nil];
-    
-    
+//    NSString *urlString = @"https://en.wikiquote.org/wiki/The_Matrix_(film)";
+//    
+//    AFHTTPRequestOperationManager *manager = [AFHTTPRequestOperationManager manager];
+//    manager.responseSerializer = [AFOnoResponseSerializer HTMLResponseSerializer];
+//    [manager GET:urlString parameters:nil success:^(AFHTTPRequestOperation *operation, ONOXMLDocument *responseDocument) {
+//       
+//        
+//        
+//        for (ONOXMLElement *element in responseDocument.rootElement.children) {
+//            NSLog(@"----------------------------------------------");
+//            NSLog(@"%@: %@", element.tag, element.attributes);
+//            NSLog(@"----------------------------------------------\n");
+//            
+//            
+//            
+//
+//            
+//            BOOL hasStringValue = element.stringValue != nil;
+//            BOOL isValidLine = [element.description containsString:@"<li>"];
+//            BOOL isCastListing = [element.description containsString:@"<li><a href="];
+//            
+//            if (hasStringValue & isValidLine) {
+//                // The cast listing begins at the end of the page. I'm using break and not continue because when the cast listing begins, there are no more quotes to supply. What distinguishes the cast listing from the beginning of the link to the end is the href (which is why I'm locating it within the string)
+//                if (isCastListing) {
+//                    break;
+//                }
+//                
+//                [self.wikiQuoteData addObject:element.stringValue];
+//            }
+//        }
+//        
+//        for (NSString *quote in self.wikiQuoteData) {
+////            NSLog(@"%@\n\n\n\n\n", quote);
+//        }
+//        
+//    } failure:nil];
+//    
+
     
     
     
@@ -66,20 +76,20 @@
 
 
 - (void)setupFirebaseReference {
-    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://stevejobsquotes.firebaseio.com"];
-    
-    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
-        
-        NSArray *people = snapshot.value[@"people"];
-        
-        for (NSDictionary *person in people) {
-            SJQPerson *currentPerson = [SJQPerson personFromDictionary:person];
-            [self.people addObject:currentPerson];
-        }
-        
-        [self.tableView reloadData];
-        
-    }];
+//    Firebase *myRootRef = [[Firebase alloc] initWithUrl:@"https://stevejobsquotes.firebaseio.com"];
+//    
+//    [myRootRef observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+//        
+//        NSArray *people = snapshot.value[@"people"];
+//        
+//        for (NSDictionary *person in people) {
+//            SJQPerson *currentPerson = [SJQPerson personFromDictionary:person];
+//            [self.people addObject:currentPerson];
+//        }
+//        
+//        [self.tableView reloadData];
+//        
+//    }];
 }
 
 
