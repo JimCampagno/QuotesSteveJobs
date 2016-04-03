@@ -6,6 +6,9 @@
 target 'SteveJobsQuotes' do
 
 pod 'Firebase', '~> 2.5'
-
+pod 'Ono', '~> 1.2'
+pod 'AFNetworking', '~> 2.2’
+pod 'AFOnoResponseSerializer', '~> 1.0'
+pod 'HTMLReader', '~> 0.9'
 end
 

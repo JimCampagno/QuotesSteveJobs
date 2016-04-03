@@ -19,12 +19,14 @@
 
 + (void)downloadImageAtUrl:(NSURL *)url
             withCompletion:(void (^)(UIImage *image, BOOL success))block {
+    NSLog(@"downloadImageAtUrl:");
     NSURLSessionDownloadTask *downloadPhotoTask =
     [[NSURLSession sharedSession] downloadTaskWithURL:url
                                     completionHandler:^(NSURL * _Nullable location,
                                                         NSURLResponse * _Nullable response,
                                                         NSError * _Nullable error) {
                                         if (!error) {
+                                            NSLog(@"no error in downloading image.");
                                             UIImage *downloadImage = [UIImage imageWithData:[NSData dataWithContentsOfURL:location]];
                                             block(downloadImage, YES);
                                         } else {

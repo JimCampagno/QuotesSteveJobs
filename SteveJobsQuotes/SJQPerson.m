@@ -13,7 +13,9 @@
 @implementation SJQPerson
 
 + (instancetype)personFromDictionary:(NSDictionary *)dict {
+    NSLog(@"personFromDictionary:");
     SJQPerson *person = [SJQPerson new];
+    person.quotes = [NSMutableArray new];
     
     person.name = dict[@"name"];
     person.knownFor = dict[@"knownFor"];
@@ -28,6 +30,7 @@
 }
 
 - (void)getImageFromURLwithCompletion:(void (^)(BOOL success))block {
+    NSLog(@"getImageFromURLwithCompletion:");
     [SJQAPIClient downloadImageAtUrl:self.imageURL
                       withCompletion:^(UIImage *image, BOOL success) {
                           

@@ -10,6 +10,6 @@
 
 @interface QuoteTableViewController : UITableViewController
 
-@property (nonatomic, strong) NSArray *people; // of SJQPersons
+@property (nonatomic, strong) NSMutableArray *people; // of SJQPersons
 
 @end

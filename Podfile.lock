@@ -1,10 +1,44 @@
 PODS:
+  - AFNetworking (2.6.3):
+    - AFNetworking/NSURLConnection (= 2.6.3)
+    - AFNetworking/NSURLSession (= 2.6.3)
+    - AFNetworking/Reachability (= 2.6.3)
+    - AFNetworking/Security (= 2.6.3)
+    - AFNetworking/Serialization (= 2.6.3)
+    - AFNetworking/UIKit (= 2.6.3)
+  - AFNetworking/NSURLConnection (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/NSURLSession (2.6.3):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (2.6.3)
+  - AFNetworking/Security (2.6.3)
+  - AFNetworking/Serialization (2.6.3)
+  - AFNetworking/UIKit (2.6.3):
+    - AFNetworking/NSURLConnection
+    - AFNetworking/NSURLSession
+  - AFOnoResponseSerializer (1.0.0):
+    - AFNetworking (~> 2.2)
+    - Ono (~> 1.0)
   - Firebase (2.5.1)
+  - HTMLReader (0.9.6)
+  - Ono (1.2.2)
 
 DEPENDENCIES:
+  - AFNetworking (~> 2.2)
+  - AFOnoResponseSerializer (~> 1.0)
   - Firebase (~> 2.5)
+  - HTMLReader (~> 0.9)
+  - Ono (~> 1.2)
 
 SPEC CHECKSUMS:
+  AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
+  AFOnoResponseSerializer: c02c8bef1d6742ac68f33ecaed41826c9657bc33
   Firebase: 3565ea88b830f28f2c77ecc524622bc71a20d085
+  HTMLReader: 7e21488ee378afc56ccade8af35840c4e03e434c
+  Ono: 80b1c686777d3f6d5d5ce6fcac8a74afef4ca197
 
 COCOAPODS: 0.39.0

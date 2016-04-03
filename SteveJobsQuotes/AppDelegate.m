@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import <HTMLReader.h>
+
 
 @interface AppDelegate ()
 
@@ -16,7 +18,172 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    
+    
+//    //    NSString *urlString = @"https://en.wikiquote.org/wiki/Rocky_(film)";
+//    NSString *urlString = @"http://en.wikiquote.org/w/api.php?format=json&action=parse&page=Rocky_(film)&prop=text";
+//    
+//    NSURL *url = [NSURL URLWithString:urlString];
+//    
+//    NSURLSession *session = [NSURLSession sharedSession];
+//    
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    
+//    NSURLSessionDataTask *dataTask =
+//    [session dataTaskWithRequest:request
+//               completionHandler:^(NSData * _Nullable data,
+//                                   NSURLResponse * _Nullable response,
+//                                   NSError * _Nullable error) {
+//                   NSString *contentType = nil;
+//                   //
+//                   //
+//                   //
+//                   //          if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+//                   //              NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
+//                   //              contentType = headers[@"Content-Type"];
+//                   //          }
+//                   
+//                   
+//                   HTMLDocument *home = [HTMLDocument documentWithData:data
+//                                                     contentTypeHeader:contentType];
+//                   //          HTMLElement *div = [home firstNodeMatchingSelector:@"li"];
+//                   NSArray *stuff = [home nodesMatchingSelector:@"li"];
+//                   NSArray *allStuff = [home childElementNodes];
+//                   
+//                   
+//                   for (HTMLElement *element in stuff) {
+//                       
+////                       NSLog(@"%@", element.description);
+//                       
+//                       if ([element.description containsString:@"<li>"]) {
+//                           
+//                           
+//                           
+//                           if ([element.description containsString:@"wikipedia.org"]) {
+//                               
+//                           }
+//                           
+//                           //                       NSLog(@"============================================\n");
+//                           //                       NSLog(@"%@", element);
+//                           //                       NSLog(@"%@", element.description);
+//                           //                       NSLog(@"%@", element.textContent);
+//                           //                       NSLog(@"============================================\n\n");
+//                           
+//                       }
+//                       
+//                       NSArray *children = [element.children array];
+//                       NSLog(@"COUNT %ld", children.count);
+//                       for (HTMLNode *node in children) {
+//                           
+////                           NSLog(@"%@", node);
+//                       }
+//                       //              }
+//                       
+//                       
+//                   }
+//                   
+//                   
+//                   
+//                   
+//                   
+//                   NSError *jsonError;
+//                   NSDictionary *json = [NSJSONSerialization JSONObjectWithData:data
+//                                                                        options:kNilOptions
+//                                                                          error:&jsonError];
+//                   
+//                   
+//                   
+//                   
+//                   
+//                   
+//                   
+//                   //
+//                   //                   NSLog(@"What is json: %@", json);
+//                   //                   NSLog(@"----------------------------");
+//                   //                   NSLog(@"What is the response: %@", response);
+//                   
+//                   
+//               }];
+//    
+//    [dataTask resume];
+    
+    
+    //    // Parse a string and find an element.
+    //    NSString *markup = @"<p><b>Ahoy there sailor!</b></p>";
+    //    HTMLDocument *document = [HTMLDocument documentWithString:markup];
+    //    NSLog(@"%@", [document firstNodeMatchingSelector:@"b"].textContent);
+    //    // => Ahoy there sailor!
+    //
+    //    // Wrap one element in another.
+    //    HTMLElement *b = [document firstNodeMatchingSelector:@"b"];
+    //    NSMutableOrderedSet *children = [b.parentNode mutableChildren];
+    //    HTMLElement *wrapper = [[HTMLElement alloc] initWithTagName:@"div"
+    //                                                     attributes:@{@"class": @"special"}];
+    //    [children insertObject:wrapper atIndex:[children indexOfObject:b]];
+    //    b.parentNode = wrapper;
+    //    NSLog(@"%@", [document.rootElement serializedFragment]);
+    //    // => <html><head></head><body><p><div class="special"> \
+    //    <b>Ahoy there sailor!</b></div></p></body></html>
+    
+    // Load a web page.
+    //    NSURL *URL = [NSURL URLWithString:urlString];
+    //    NSURLSession *session = [NSURLSession sharedSession];
+    //    [[session dataTaskWithURL:URL completionHandler:
+    //      ^(NSData *data, NSURLResponse *response, NSError *error) {
+    //          NSString *contentType = nil;
+    //
+    //
+    //
+    //          if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+    //              NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
+    //              contentType = headers[@"Content-Type"];
+    //          }
+    //          HTMLDocument *home = [HTMLDocument documentWithData:data
+    //                                            contentTypeHeader:contentType];
+    ////          HTMLElement *div = [home firstNodeMatchingSelector:@"li"];
+    //          NSArray *stuff = [home nodesMatchingSelector:@"li"];
+    //
+    //
+    //
+    //          for (HTMLElement *element in stuff) {
+    ////              if ([element.description containsString:@"<li>"]) {
+    //                  NSLog(@"============================================\n");
+    //                  NSLog(@"%@", element);
+    //                  NSLog(@"%@", element.description);
+    //                  NSLog(@"%@", element.textContent);
+    //                  NSLog(@"============================================\n\n");
+    ////              }
+    //
+    //
+    //          }
+    //
+    //
+    //
+    ////          NSCharacterSet *whitespace = [NSCharacterSet whitespaceAndNewlineCharacterSet];
+    ////          NSLog(@"%@", [div.textContent stringByTrimmingCharactersInSet:whitespace]);
+    //
+    //
+    //
+    //          // => A WHATWG-compliant HTML parser in Objective-C.
+    //      }] resume];
+    
+    
+    
+    
+    
+    
+    
+    //    TFHppleElement * element = [elements objectAtIndex:0];
+    
+    
+    
+    //    [e text];                       // The text inside the HTML element (the content of the first text node)
+    //    [e tagName];                    // "a"
+    //    [e attributes];                 // NSDictionary of href, class, id, etc.
+    //    [e objectForKey:@"href"];       // Easy access to single attribute
+    //    [e firstChildWithTagName:@"b"]; // The first "b" child node
+    //
+    
     return YES;
 }
 

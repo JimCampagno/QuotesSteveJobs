@@ -29,6 +29,8 @@
 
 - (void)commonInit {
     
+    NSLog(@"commonInit:");
+    
     [[NSBundle mainBundle] loadNibNamed:@"QuoteView" owner:self options:nil];
     
     [self addSubview:self.contentView];
@@ -42,6 +44,7 @@
 }
 
 - (void)setPerson:(SJQPerson *)person {
+    NSLog(@"setPerson:");
     _person = person;
     self.nameLabel.text = person.name;
     self.quoteLabel.text = [NSString stringWithFormat:@"%ld Quotes", person.quotes.count];
@@ -49,12 +52,19 @@
     
     if (self.person.image) {
         self.imageView.image = self.person.image;
+        self.imageView.alpha = 1.0;
     } else {
+        self.imageView.image = nil;
         [self.person getImageFromURLwithCompletion:^(BOOL success) {
             dispatch_async(dispatch_get_main_queue(), ^{
                 BOOL isOKtoUpdateImageView = success && [self.delegate canUpdateImageViewWithQuoteView:self];
                 if (isOKtoUpdateImageView) {
                     self.imageView.image = self.person.image;
+
+                    [UIView animateWithDuration:0.8 animations:^{
+                        self.imageView.alpha = 1.0;
+                        
+                    }];
                 }
             });
         }];

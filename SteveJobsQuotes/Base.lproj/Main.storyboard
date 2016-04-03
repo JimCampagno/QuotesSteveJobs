@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="hKV-Cd-K3w">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="3V6-Tp-aV0">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -18,37 +18,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GX8-On-D5b">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GX8-On-D5b">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lts-Wq-sil">
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" alwaysBounceHorizontal="YES" pagingEnabled="YES" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lts-Wq-sil">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8Jp-QC-nEJ">
-                                                <rect key="frame" x="0.0" y="0.0" width="2250" height="603"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="2250" height="667"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1F-rM-BsE" customClass="SteveJobsView">
-                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qCi-Ar-a57" customClass="SteveJobsView">
-                                                        <rect key="frame" x="375" y="0.0" width="375" height="603"/>
+                                                        <rect key="frame" x="375" y="0.0" width="375" height="667"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S8s-xn-XLX" customClass="SteveJobsView">
-                                                        <rect key="frame" x="750" y="0.0" width="375" height="603"/>
+                                                        <rect key="frame" x="750" y="0.0" width="375" height="667"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7F-hy-qUW" customClass="SteveJobsView">
-                                                        <rect key="frame" x="1125" y="0.0" width="375" height="603"/>
+                                                        <rect key="frame" x="1125" y="0.0" width="375" height="667"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BSV-e3-qJ9" customClass="SteveJobsView">
-                                                        <rect key="frame" x="1500" y="0.0" width="375" height="603"/>
+                                                        <rect key="frame" x="1500" y="0.0" width="375" height="667"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qGx-ZF-CkN" customClass="SteveJobsView">
-                                                        <rect key="frame" x="1875" y="0.0" width="375" height="603"/>
+                                                        <rect key="frame" x="1875" y="0.0" width="375" height="667"/>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
                                                 </subviews>
@@ -93,12 +93,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2839.5" y="385.5"/>
+            <point key="canvasLocation" x="2540.5" y="360.5"/>
         </scene>
         <!--Steve Jobs Quotes-->
         <scene sceneID="fCH-YS-w70">
             <objects>
-                <viewController id="Wxw-yo-akP" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="Wxw-yo-akP" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fwx-dx-4nE"/>
                         <viewControllerLayoutGuide type="bottom" id="msA-D9-FCX"/>
@@ -132,8 +132,8 @@
         <!--Quote Table View Controller-->
         <scene sceneID="eNi-Ws-JDj">
             <objects>
-                <tableViewController id="z1j-j1-DfY" customClass="QuoteTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="azp-dw-CSc">
+                <tableViewController automaticallyAdjustsScrollViewInsets="NO" id="z1j-j1-DfY" customClass="QuoteTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="118" sectionHeaderHeight="28" sectionFooterHeight="28" id="azp-dw-CSc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -142,10 +142,10 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="118"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="D1L-vg-59Z" id="Qd4-LX-upn">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="117"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rCT-p1-g1f" customClass="QuoteView">
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rCT-p1-g1f" customClass="QuoteView">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="118"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
@@ -167,6 +167,9 @@
                             <outlet property="delegate" destination="z1j-j1-DfY" id="Cpg-v7-BN4"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="quoteDetailSegue" id="Gyd-yc-7lc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="edR-SW-JKg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -191,25 +194,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vT0-ZB-kkD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1473.5" y="-438.5"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="rvD-rA-6Pu">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hKV-Cd-K3w" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="0hw-c4-45a">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.4321830935" green="0.61940984499999996" blue="0.81491315360000005" alpha="1" colorSpace="calibratedRGB"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="qV5-fK-K4k"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UyU-oq-ae5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2027" y="385"/>
         </scene>
     </scenes>
 </document>
