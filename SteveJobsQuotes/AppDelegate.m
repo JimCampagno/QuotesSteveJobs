@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 #import <HTMLReader.h>
-
+#import "NSString+EmojiExtension.h"
 
 @interface AppDelegate ()
 
@@ -19,14 +19,12 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    
+    NSMutableDictionary *people = [NSMutableDictionary new];
     //    NSString *urlString = @"https://en.wikiquote.org/wiki/Rocky_(film)";
     NSString *urlString = @"http://en.wikiquote.org/w/api.php?format=json&action=parse&page=The_Matrix_(film)&prop=text";
     
     NSURL *url = [NSURL URLWithString:urlString];
-    
     NSURLSession *session = [NSURLSession sharedSession];
-    
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
     NSURLSessionDataTask *dataTask =
@@ -35,41 +33,103 @@
                                    NSURLResponse * _Nullable response,
                                    NSError * _Nullable error) {
                    NSString *contentType = nil;
-                   //
-                   //
-                   //
-                   //          if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
-                   //              NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
-                   //              contentType = headers[@"Content-Type"];
-                   //          }
-                   
+                   if ([response isKindOfClass:[NSHTTPURLResponse class]]) {
+                       NSDictionary *headers = [(NSHTTPURLResponse *)response allHeaderFields];
+                       contentType = headers[@"Content-Type"];
+                   }
                    
                    HTMLDocument *home = [HTMLDocument documentWithData:data
                                                      contentTypeHeader:contentType];
-                   //          HTMLElement *div = [home firstNodeMatchingSelector:@"li"];
-                   NSArray *stuff = [home nodesMatchingSelector:@"li"];
-                   NSArray *allStuff = [[home.rootElement children] array];
                    
-                   for (HTMLElement *element in allStuff) {
-                       for (HTMLNode *thing in element.children) {
-                           NSLog(@"[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
+                   NSArray *elements = [[home.rootElement children] array];
+                   
+                   for (HTMLElement *element in elements) {
+                       for (HTMLElement *node in element.children) {
                            
-                           
-                           if ([thing.description containsString:@"<li>"]) {
+                           if ([self isHeading2HTMLElement:node]) {
+                               NSString *character = [node.textContent stringByReplacingOccurrencesOfString:@"[edit]"
+                                                                                                 withString:@""];
+                               people[character] = [NSMutableArray new];
+                               NSLog(@"%@", character);
                                
-                               NSLog(@"Thing: %@", thing.description);
+                           } else if ([self isUnorderedListHTMLElement:node]) {
+                               
+                               NSString *thing = node.textContent;
+                               NSArray *quotes = [thing componentsSeparatedByString:@"\\n"];
+                        
+                               for (NSInteger i = 0; i < quotes.count; i++) {
+                                   NSString *quote = quotes[i];
+                                   NSRange range;
+                                   range = [quote rangeOfString:@"\\u" options: NSBackwardsSearch];
+                                   
+                                   while (range.length != 0) {
+                                       NSRange newRange = NSMakeRange(range.location, range.length + 4);
+                                       quote = [quote stringByReplacingCharactersInRange:newRange
+                                                                              withString:@" "];
+                                       range = [quote rangeOfString:@"\\u" options: NSBackwardsSearch];
+                                   }
+                                   
+                                   quote = [quote stringByReplacingOccurrencesOfString:@"\\"
+                                                                            withString:@""];
+                                   
+                                   NSLog(@"%ld. %@\n\n", i+1, quote);
+                               }
                            }
                            
-                           NSLog(@"-----------------------------------------");
-                           NSLog(@"%@", thing.textContent);
-                           NSLog(@"-----------------------------------------");
                            
                            
                            
                            
-                           NSLog(@"[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]\n\n\n\n");
                            
                        }
+                       
+                       
+                       //                       if ([element isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:@"h2"] matchesElement:element]) {
+                       //
+                       //                           NSLog(@"%@", element);
+                       //                           //                                   NSLog(@"%@", node.textContent);
+                       ////                           [ret addObject:node];
+                       //                       }
+                       
+                       
+                       //                       NSMutableArray *ret = [NSMutableArray new];
+                       //                       for (HTMLElement *node in element.treeEnumerator) {
+                       //
+                       //                           NSLog(@"------------------------");
+                       //                           NSLog(@"How goes you: %@", node);
+                       //                           NSLog(@"------------------------");
+                       //
+                       //
+                       //                           if ([node isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:@"h2"] matchesElement:node]) {
+                       //                               //                                   NSLog(@"%@", node.textContent);
+                       //                               [ret addObject:node];
+                       //                           }
+                       //                       }
+                       
+                       
+                       
+                       
+                       NSInteger i = 1;
+                       
+                       //                       for (HTMLNode *thing in element.children) {
+                       //                           NSLog(@"[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]");
+                       //
+                       //
+                       //
+                       //
+                       //
+                       //
+                       //
+                       ////                           NSLog(@"-----------------------------------------");
+                       ////                           NSLog(@"%ld. %@", i, thing);
+                       ////                           NSLog(@"-----------------------------------------");
+                       //
+                       //
+                       //                           i++;
+                       //
+                       //                           NSLog(@"[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]\n\n\n\n");
+                       //
+                       //                       }
                        
                        
                    }
@@ -77,36 +137,36 @@
                    
                    
                    
-                   for (HTMLElement *element in stuff) {
-                       
-                       //                       NSLog(@"%@", element.description);
-                       
-                       if ([element.description containsString:@"<li>"]) {
-                           
-                           
-                           
-                           if ([element.description containsString:@"wikipedia.org"]) {
-                               
-                           }
-                           
-//                           NSLog(@"============================================\n");
-//                           NSLog(@"%@", element);
-//                           NSLog(@"%@", element.description);
-//                           NSLog(@"%@", element.textContent);
-//                           NSLog(@"============================================\n\n");
-                           
-                       }
-                       
-                       NSArray *children = [element.children array];
-                       //                       NSLog(@"COUNT %ld", children.count);
-                       for (HTMLNode *node in children) {
-                           
-                           //                           NSLog(@"%@", node);
-                       }
-                       //              }
-                       
-                       
-                   }
+                   //                   for (HTMLElement *element in stuff) {
+                   //
+                   //                       //                       NSLog(@"%@", element.description);
+                   //
+                   //                       if ([element.description containsString:@"<li>"]) {
+                   //
+                   //
+                   //
+                   //                           if ([element.description containsString:@"wikipedia.org"]) {
+                   //
+                   //                           }
+                   //
+                   //                           //                           NSLog(@"============================================\n");
+                   //                           //                           NSLog(@"%@", element);
+                   //                           //                           NSLog(@"%@", element.description);
+                   //                           //                           NSLog(@"%@", element.textContent);
+                   //                           //                           NSLog(@"============================================\n\n");
+                   //
+                   //                       }
+                   //
+                   //                       NSArray *children = [element.children array];
+                   //                       //                       NSLog(@"COUNT %ld", children.count);
+                   //                       for (HTMLNode *node in children) {
+                   //
+                   //                           //                           NSLog(@"%@", node);
+                   //                       }
+                   //                       //              }
+                   //
+                   //
+                   //                   }
                    
                    
                    
@@ -211,6 +271,15 @@
     //
     
     return YES;
+}
+
+
+- (BOOL)isUnorderedListHTMLElement:(HTMLElement *)element {
+    return ([element isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:@"ul"] matchesElement:element]);
+}
+
+- (BOOL)isHeading2HTMLElement:(HTMLElement *)element {
+    return ([element isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:@"h2"] matchesElement:element]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
