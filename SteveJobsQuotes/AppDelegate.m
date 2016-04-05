@@ -18,9 +18,20 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+
+    [self wikipediaQuoteAPItest];
+    
+    return YES;
+}
+
+- (void)wikipediaQuoteAPItest {
     
     NSMutableDictionary *people = [NSMutableDictionary new];
-    NSString *urlString = @"http://en.wikiquote.org/w/api.php?format=json&action=parse&page=Casablanca_(film)&prop=text";
+    
+    //    NSString *searchQuery = @"A_Bug%27s_Life";
+    //    NSString *urlString = [NSString stringWithFormat:@"http://en.wikiquote.org/w/api.php?format=json&action=parse&page=%@&prop=text", searchQuery];
+    
+    NSString *urlString = @"https://en.wikipedia.org/wiki/Star_Wars_(film)";
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -44,17 +55,29 @@
                    NSString *character;
                    
                    
+                   for (HTMLElement *testNode in home.treeEnumerator) {
+                       if ([testNode isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:@"img"] matchesElement:testNode]) {
+                           
+                           NSString *altValue = [testNode.attributes[@"class"] lowercaseString];
+                           if ([altValue containsString:@"thumbborder"]) {
+                               NSString *srcsetValue = testNode[@"srcset"];
+                               NSString *imageURL = [srcsetValue componentsSeparatedByString:@" "].firstObject;
+                               NSLog(@"%@", imageURL);
+                               break;
+                           }
+                           
+                           
+                       }
+                   }
+                   
                    for (HTMLElement *element in elements) {
                        for (HTMLElement *node in element.children) {
-                           
-                           
                            
                            if ([self isHeading2HTMLElement:node]) {
                                character = [node.textContent stringByReplacingOccurrencesOfString:@"[edit]"
                                                                                        withString:@""];
                                [people setObject:[@[] mutableCopy]
                                           forKey:character];
-                               //                               NSLog(@"%@", character);
                                
                            } else if ([self isUnorderedListHTMLElement:node]) {
                                
@@ -63,8 +86,11 @@
                                
                                for (NSInteger i = 0; i < quotes.count; i++) {
                                    NSString *quote = quotes[i];
+                                   
                                    NSRange range;
+                                   NSRange otherRange;
                                    range = [quote rangeOfString:@"\\u" options: NSBackwardsSearch];
+                                   otherRange = [quote rangeOfString:@"\\U" options:NSBackwardsSearch];
                                    
                                    while (range.length != 0) {
                                        NSRange newRange = NSMakeRange(range.location, range.length + 4);
@@ -73,29 +99,36 @@
                                        range = [quote rangeOfString:@"\\u" options: NSBackwardsSearch];
                                    }
                                    
+                                   while (otherRange.length != 0) {
+                                       NSRange newRange = NSMakeRange(range.location, range.length + 4);
+                                       quote = [quote stringByReplacingCharactersInRange:newRange
+                                                                              withString:@" "];
+                                       range = [quote rangeOfString:@"\\U" options: NSBackwardsSearch];
+                                   }
+                                   
+                                   
+                                   
                                    quote = [quote stringByReplacingOccurrencesOfString:@"\\"
                                                                             withString:@""];
                                    
-                            
+                                   
                                    
                                    if (quote.length >= 1) {
                                        [people[character] addObject:quote];
                                    }
                                    
                                    
-
+                                   
                                }
                            }
                        }
                    }
                    
-                   NSLog(@"%@", people);
+                   // NSLog(@"%@", people);
                    
                }];
     
     [dataTask resume];
-    
-    return YES;
 }
 
 
@@ -105,6 +138,10 @@
 
 - (BOOL)isHeading2HTMLElement:(HTMLElement *)element {
     return ([element isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:@"h2"] matchesElement:element]);
+}
+
+- (BOOL)isSpecificElementString:(NSString *)string withElement:(HTMLElement *)element {
+    return ([element isKindOfClass:[HTMLElement class]] && [[HTMLSelector selectorForString:string] matchesElement:element]);
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

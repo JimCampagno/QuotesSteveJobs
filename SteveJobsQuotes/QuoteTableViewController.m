@@ -97,20 +97,17 @@
 #pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"tableView:numberOfRowsInSection:");
     return self.people.count;
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"tableView:cellForRowAtIndexPath:");
     QuoteTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"quoteCell"
                                                                forIndexPath:indexPath];
     return cell;
 }
 
 -(void)tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSLog(@"tableView:willDisplayCell:forRowAtIndexPath:");
     QuoteTableViewCell *quoteCell = (QuoteTableViewCell *)cell;
     if (!quoteCell.quoteView.delegate) {
         quoteCell.quoteView.delegate = self;
