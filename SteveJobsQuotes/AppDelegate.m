@@ -19,7 +19,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     
-    NSString *query = @"Steve Jobs";
+    NSString *query = @"Bernie Sanders";
     [self bingImageSearchWithQuery:query];
     
     //[self wikipediaQuoteAPItest];
@@ -48,6 +48,7 @@
     NSString *escpaedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
     NSString *searchQuery = [NSString stringWithFormat:@"%%27%@%%27", escpaedQuery];
     NSString *urlString = [NSString stringWithFormat:@"https://api.datamarket.azure.com/Bing/Search/v1/Composite?Sources=%%27image%%27&$top=3&$format=json&Query=%@", searchQuery];
+    // &ImageFilters=%%27Size%%3AMedium%%27
     NSURL *url = [NSURL URLWithString:urlString];
     
     
