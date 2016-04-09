@@ -18,20 +18,119 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-
-    [self wikipediaQuoteAPItest];
+    
+    NSString *query = @"Steve Jobs";
+    [self bingImageSearchWithQuery:query];
+    
+    //[self wikipediaQuoteAPItest];
     
     return YES;
 }
+
+- (void)bingImageSearchWithQuery:(NSString *)query {
+    
+    //Helpful links
+    // http://stackoverflow.com/questions/27311286/what-are-the-ajax-authorization-headers-for-a-bing-api-request/27315449#27315449
+    //https://api.datamarket.azure.com/Bing/Search/Web?Query=%27Xbox%27&$format=json
+    
+    //    zoZHGohksiYCZ/Wiwp4HkHLtBAtDjV6sCTvh1qLTtdQ <-- not encoded
+    // OnpvWkhHb2hrc2lZQ1ovV2l3cDRIa0hMdEJBdERqVjZzQ1R2aDFxTFR0ZFE= <-- base-64 encoded through a web-site (https://www.base64encode.org)
+    
+    //    NSString *fromString = @"zoZHGohksiYCZ/Wiwp4HkHLtBAtDjV6sCTvh1qLTtdQ";
+    //    NSData *plainData = [fromString dataUsingEncoding:NSUTF8StringEncoding];
+    //    NSString *base64String;
+    //    if ([plainData respondsToSelector:@selector(base64EncodedStringWithOptions:)]) {
+    //        base64String = [plainData base64EncodedStringWithOptions:kNilOptions];
+    //    }
+    //    var myUrl = 'https://api.datamarket.azure.com/Bing/Search/v1/Composite?Sources=%27image%27&$top=50&$format=json&Query=%27' + $searchQuery + '%27';
+    
+    
+    NSString *escpaedQuery = [query stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]];
+    NSString *searchQuery = [NSString stringWithFormat:@"%%27%@%%27", escpaedQuery];
+    NSString *urlString = [NSString stringWithFormat:@"https://api.datamarket.azure.com/Bing/Search/v1/Composite?Sources=%%27image%%27&$top=3&$format=json&Query=%@", searchQuery];
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    
+    
+    
+    //    @"https://api.datamarket.azure.com/Bing/Search/Image?Query=%27xbox%27&$format=json"
+    
+    //NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"https://api.datamarket.azure.com/Bing/Search/Image"];
+    
+//    NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"https://api.datamarket.azure.com/Bing/Search/v1/Composite"];
+//    NSURLQueryItem *sources = [NSURLQueryItem queryItemWithName:@"Sources"
+//                                                          value:@"%27image%27&$top=5"];
+//    NSURLQueryItem *format = [NSURLQueryItem queryItemWithName:@"format"
+//                                                         value:@"json"];
+//    NSURLQueryItem *searchQuery = [NSURLQueryItem queryItemWithName:@"Query"
+//                                                              value:[NSString stringWithFormat:@"%%27%@%%27", escpaedQuery]];
+//    
+//    components.queryItems = @[sources, format, searchQuery];
+    
+    
+    
+    
+    //
+    //
+    //    NSURLQueryItem *search = [NSURLQueryItem queryItemWithName:@"Query" value:@"%27xbox%27"];
+    ////    NSURLQueryItem *sources = [NSURLQueryItem queryItemWithName:@"Sources" value:@"image"];
+    //    NSURLQueryItem *format = [NSURLQueryItem queryItemWithName:@"$format" value:@"json"];
+    //    components.queryItems = @[search, format];
+    
+    NSURLSession *sharedSession = [NSURLSession sharedSession];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    NSString *value = @"Basic OnpvWkhHb2hrc2lZQ1ovV2l3cDRIa0hMdEJBdERqVjZzQ1R2aDFxTFR0ZFE=";
+    [request addValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request addValue:value forHTTPHeaderField:@"Authorization"];
+    
+    NSURLSessionDataTask *dataTask =
+    [sharedSession dataTaskWithRequest:request
+                     completionHandler:^(NSData * _Nullable data,
+                                         NSURLResponse * _Nullable response,
+                                         NSError * _Nullable error) {
+                         if (error) {
+                             NSLog(@"%@", error.localizedDescription);
+                         }
+                         
+                         if (response) {
+                             NSLog(@"response variable: %@", response);
+                         }
+                         
+                         if (data) {
+                             NSData *dataThing = (NSData *)data;
+                             NSDictionary *jsonDict = [NSJSONSerialization JSONObjectWithData:dataThing options:kNilOptions error:&error];
+                             NSLog(@"jsonDict variable: %@", jsonDict);
+                         }
+                     }];
+    
+    [dataTask resume];
+    
+    
+    //    NSURLRequest *request = [NSURLRequest requ]
+    
+    
+    
+    
+    //    NSString *baseURLstring = [NSString stringWithFormat:@"https://api.datamarket.azure.com/Bing/Search/v1/?Query=%@&Sources=image", query];
+    //    NSURL *url = [NSURL URLWithString:baseURLstring];
+    //
+    //    NSLog(@"url is %@", url);
+    //
+    
+    
+}
+
+
 
 - (void)wikipediaQuoteAPItest {
     
     NSMutableDictionary *people = [NSMutableDictionary new];
     
-    //    NSString *searchQuery = @"A_Bug%27s_Life";
-    //    NSString *urlString = [NSString stringWithFormat:@"http://en.wikiquote.org/w/api.php?format=json&action=parse&page=%@&prop=text", searchQuery];
+    NSString *searchQuery = @"Up_(2009_film)";
+    NSString *urlString = [NSString stringWithFormat:@"http://en.wikiquote.org/w/api.php?format=json&action=parse&page=%@&prop=text", searchQuery];
     
-    NSString *urlString = @"https://en.wikipedia.org/wiki/Star_Wars_(film)";
+    //    NSString *urlString = @"https://en.wikipedia.org/wiki/Star_Wars_(film)";
     
     NSURL *url = [NSURL URLWithString:urlString];
     NSURLSession *session = [NSURLSession sharedSession];
@@ -124,12 +223,14 @@
                        }
                    }
                    
-                   // NSLog(@"%@", people);
+                   NSLog(@"%@", people);
                    
                }];
     
     [dataTask resume];
 }
+
+
 
 
 - (BOOL)isUnorderedListHTMLElement:(HTMLElement *)element {
